@@ -21,8 +21,8 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200">
-      <div className="p-6">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 h-full flex flex-col">
+      <div className="p-6 flex flex-col h-full">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-3">
             {getIcon(assessment.category)}
@@ -37,7 +37,7 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
           </div>
         </div>
 
-        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
           {assessment.description}
         </p>
 
@@ -58,7 +58,7 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
           <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
             {assessment.category}
           </span>
