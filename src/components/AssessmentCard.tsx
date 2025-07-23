@@ -1,5 +1,5 @@
 import { Assessment } from '@/data/assessments';
-import { ExternalLink, Activity, Heart, User } from 'lucide-react';
+import { ExternalLink, Activity, Heart, User, Target } from 'lucide-react';
 
 interface AssessmentCardProps {
   assessment: Assessment;
@@ -15,6 +15,8 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
         return <Heart className="w-6 h-6 text-red-500" />;
       case 'Clinical Assessment':
         return <User className="w-6 h-6 text-green-600" />;
+      case 'Functional Assessment':
+        return <Target className="w-6 h-6 text-purple-600" />;
       default:
         return <Activity className="w-6 h-6 text-blue-600" />;
     }

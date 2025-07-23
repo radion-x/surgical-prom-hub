@@ -89,6 +89,76 @@ export const assessments: Assessment[] = [
     category: "Quality of Life",
     bodyPart: ["General"],
     purpose: "General health status and quality of life assessment"
+  },
+  {
+    id: "sane",
+    name: "Single Assessment Numeric Evaluation",
+    abbreviation: "SANE",
+    description: "A simple, single-question assessment that asks patients to rate their current level of function as a percentage of normal function.",
+    url: "https://sane.websited.org/",
+    category: "Functional Assessment",
+    bodyPart: ["General"],
+    purpose: "Quick evaluation of overall functional status"
+  },
+  {
+    id: "moxfq",
+    name: "Manchester-Oxford Foot Questionnaire",
+    abbreviation: "MOXFQ",
+    description: "A patient-reported outcome measure specifically designed to assess outcomes of foot surgery, evaluating pain, walking/standing, and social interaction.",
+    url: "https://moxfq.websited.org/",
+    category: "Joint Function",
+    bodyPart: ["Foot", "Ankle"],
+    purpose: "Comprehensive assessment of foot and ankle function"
+  },
+  {
+    id: "oes",
+    name: "Oxford Elbow Score",
+    abbreviation: "OES",
+    description: "A patient-reported outcome measure designed to assess function and symptoms in patients with elbow problems, covering pain, function, and social-psychological effects.",
+    url: "https://oes.websited.org/",
+    category: "Joint Function",
+    bodyPart: ["Elbow"],
+    purpose: "Evaluates elbow function and pain in daily activities"
+  },
+  {
+    id: "ases",
+    name: "American Shoulder and Elbow Surgeons Score",
+    abbreviation: "ASES",
+    description: "A standardized assessment tool that evaluates shoulder function through both patient self-evaluation and physician assessment components.",
+    url: "https://ases.websited.org/",
+    category: "Clinical Assessment",
+    bodyPart: ["Shoulder", "Elbow"],
+    purpose: "Comprehensive evaluation of shoulder and elbow function"
+  },
+  {
+    id: "meps",
+    name: "Mayo Elbow Performance Score",
+    abbreviation: "MEPS",
+    description: "A clinician-based assessment tool that evaluates elbow function based on pain, motion, stability, and daily function parameters.",
+    url: "https://meps.websited.org/",
+    category: "Clinical Assessment",
+    bodyPart: ["Elbow"],
+    purpose: "Clinical evaluation of elbow performance and function"
+  },
+  {
+    id: "oss",
+    name: "Oxford Shoulder Score",
+    abbreviation: "OSS",
+    description: "A patient-reported outcome measure specifically designed to assess function and pain in patients with shoulder problems in their daily activities.",
+    url: "https://oss.websited.org/",
+    category: "Joint Function",
+    bodyPart: ["Shoulder"],
+    purpose: "Measures shoulder function and pain levels"
+  },
+  {
+    id: "worc",
+    name: "Western Ontario Rotator Cuff Index",
+    abbreviation: "WORC",
+    description: "A disease-specific quality of life measurement tool for patients with rotator cuff pathology, covering physical symptoms, sports/recreation, work, lifestyle, and emotions.",
+    url: "https://worc.websited.org/",
+    category: "Quality of Life",
+    bodyPart: ["Shoulder"],
+    purpose: "Comprehensive quality of life assessment for rotator cuff conditions"
   }
 ];
 
@@ -100,7 +170,8 @@ export const categories = [
   "Clinical Assessment",
   "Recovery Assessment",
   "Joint Awareness",
-  "Quality of Life"
+  "Quality of Life",
+  "Functional Assessment"
 ];
 
 export const bodyParts = [
@@ -109,5 +180,9 @@ export const bodyParts = [
   "Lower Back", 
   "Knee",
   "Hip",
+  "Shoulder",
+  "Elbow",
+  "Foot",
+  "Ankle",
   "General"
 ];
