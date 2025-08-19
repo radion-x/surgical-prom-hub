@@ -1,4 +1,4 @@
-# Medical Assessment Hub
+# Aaron's Assessment Hub
 
 A centralized Next.js web application showcasing digital versions of recognized medical assessments that doctors and surgeons require patients to complete. This platform provides easy access to validated assessment tools used in clinical practice.
 
@@ -41,12 +41,14 @@ The platform includes 8 comprehensive medical assessment tools:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
-git clone <repository-url>
-cd odi-showcase
+git clone https://github.com/radion-x/aarons-assessment-hub.git
+cd aarons-assessment-hub
 ```
 
-2. Install dependencies:
+1. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -55,7 +57,8 @@ yarn install
 pnpm install
 ```
 
-3. Run the development server:
+1. Run the development server:
+
 ```bash
 npm run dev
 # or
@@ -64,11 +67,11 @@ yarn dev
 pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## 🏗️ Project Structure
 
-```
+```text
 src/
 ├── app/                 # Next.js App Router pages
 │   ├── layout.tsx      # Root layout with metadata
@@ -104,6 +107,7 @@ The codebase is structured for easy maintenance and extension:
 ## 📱 Responsive Design
 
 The application is fully responsive and optimized for:
+
 - Desktop computers (clinical workstations)
 - Tablets (portable clinical use)
 - Mobile devices (patient self-assessment)
@@ -121,6 +125,7 @@ The easiest way to deploy is using the [Vercel Platform](https://vercel.com/new?
 ### Other Platforms
 
 The application can be deployed to any platform that supports Next.js:
+
 - Netlify
 - AWS Amplify
 - Digital Ocean App Platform
@@ -134,6 +139,7 @@ The application can be deployed to any platform that supports Next.js:
 To add a new assessment tool:
 
 1. Add the assessment data to `src/data/assessments.ts`:
+
 ```typescript
 {
   id: "new-assessment",
@@ -147,8 +153,8 @@ To add a new assessment tool:
 }
 ```
 
-2. If needed, add new categories to the `categories` array
-3. The new assessment will automatically appear in the interface
+1. If needed, add new categories to the `categories` array
+1. The new assessment will automatically appear in the interface
 
 ### Styling Customization
 
