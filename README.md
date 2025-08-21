@@ -35,153 +35,30 @@ The platform includes 8 comprehensive medical assessment tools:
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- npm, yarn, pnpm, or bun package manager
+## Aaron's Assessment Hub — Professor Aaron Buckland PROMs
 
-### Installation
+A Next.js application providing direct access to the PROMs used in Professor Aaron Buckland’s clinical practice.
 
-1. Clone the repository:
+### PROMs Included
 
-```bash
-git clone https://github.com/radion-x/aarons-assessment-hub.git
-cd aarons-assessment-hub
-```
+- Oswestry Disability Index (ODI)
+- EQ-5D-3L
+- EQ-5D-5L
+- CPCHILD
+- VAS-SSRAA
+- SRS-22r
 
-1. Install dependencies:
+### Run locally
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-1. Run the development server:
-
-```bash
 npm run dev
+```
+
+Open http://localhost:3000
+
+### Notes
+
+- All links open in a new tab and direct to the respective PROM portals.
+- Categories and body systems are simplified for clarity and faster filtering.
 # or
-yarn dev
-# or
-pnpm dev
-```
-
-1. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🏗️ Project Structure
-
-```text
-src/
-├── app/                 # Next.js App Router pages
-│   ├── layout.tsx      # Root layout with metadata
-│   ├── page.tsx        # Main homepage
-│   └── globals.css     # Global styles
-├── components/         # React components
-│   ├── AssessmentCard.tsx    # Individual assessment display
-│   ├── FilterBar.tsx         # Search and category filtering
-│   ├── Header.tsx           # Site header with branding
-│   └── Footer.tsx           # Site footer with information
-└── data/              # Static data and types
-    └── assessments.ts  # Assessment data and TypeScript interfaces
-```
-
-## 🎯 Usage
-
-### For Healthcare Professionals
-
-1. **Browse Assessments**: View all available assessment tools on the main page
-2. **Filter Tools**: Use the category filters or search functionality to find specific assessments
-3. **Access Tools**: Click "Access Tool" on any assessment card to open the digital version
-4. **Mobile Access**: Use the responsive design to access tools on any device
-
-### For Developers
-
-The codebase is structured for easy maintenance and extension:
-
-- Add new assessments by updating `src/data/assessments.ts`
-- Modify the UI by editing components in `src/components/`
-- Customize styling through Tailwind CSS classes
-- Extend functionality by adding new pages to `src/app/`
-
-## 📱 Responsive Design
-
-The application is fully responsive and optimized for:
-
-- Desktop computers (clinical workstations)
-- Tablets (portable clinical use)
-- Mobile devices (patient self-assessment)
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-The easiest way to deploy is using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme):
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically with every push
-
-### Other Platforms
-
-The application can be deployed to any platform that supports Next.js:
-
-- Netlify
-- AWS Amplify
-- Digital Ocean App Platform
-- Railway
-- Heroku
-
-## 🔧 Customization
-
-### Adding New Assessments
-
-To add a new assessment tool:
-
-1. Add the assessment data to `src/data/assessments.ts`:
-
-```typescript
-{
-  id: "new-assessment",
-  name: "New Assessment Tool",
-  abbreviation: "NAT",
-  description: "Description of the assessment...",
-  url: "https://your-assessment-url.com",
-  category: "Assessment Category",
-  bodyPart: ["Relevant Body Part"],
-  purpose: "Clinical purpose of the assessment"
-}
-```
-
-1. If needed, add new categories to the `categories` array
-1. The new assessment will automatically appear in the interface
-
-### Styling Customization
-
-The application uses Tailwind CSS for styling. Key customization points:
-
-- **Colors**: Modify the color scheme in component files
-- **Layout**: Adjust grid layouts and spacing in `page.tsx`
-- **Typography**: Update font sizes and weights throughout components
-- **Branding**: Customize the header and footer in their respective components
-
-## 📄 License
-
-This project is designed for educational and clinical use. Please ensure proper validation and approval for clinical implementation.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📞 Support
-
-For questions about the assessment tools or technical support, please refer to the individual assessment websites or contact the development team.
-
----
-
-Built with ❤️ for the healthcare community

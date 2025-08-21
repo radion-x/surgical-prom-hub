@@ -1,27 +1,46 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Roboto_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Medical Assessment Hub | Digital Healthcare Tools",
-  description: "Centralized access to validated digital medical assessment tools for healthcare professionals. Includes ODI, Oxford Knee/Hip Scores, KOOS, Harris Hip Score, and more.",
-  keywords: ["medical assessment", "healthcare tools", "patient outcomes", "clinical evaluation", "orthopedic assessment"],
-  authors: [{ name: "Medical Assessment Hub" }],
+  title: "Professor Aaron Buckland | PROMs Hub",
+  description:
+    "Direct access to PROMs used in Professor Aaron Buckland’s practice: ODI, EQ‑5D‑3L, EQ‑5D‑5L, CPCHILD, VAS‑SSRAA, and SRS‑22r.",
+  keywords: [
+    "PROMs",
+    "patient-reported outcomes",
+    "spine outcomes",
+    "ODI",
+    "EQ-5D",
+    "SRS-22r",
+    "CPCHILD",
+    "VAS-SSRAA",
+  ],
+  authors: [{ name: "Professor Aaron Buckland" }],
   openGraph: {
-    title: "Medical Assessment Hub",
-    description: "Digital assessment tools for healthcare professionals",
+    title: "Professor Aaron Buckland — PROMs Hub",
+    description: "Patient‑Reported Outcome Measures for spine and musculoskeletal care",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2563EB",
 };
 
 export default function RootLayout({
@@ -31,9 +50,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <a href="#main" className="skip-link">Skip to content</a>
         {children}
       </body>
     </html>

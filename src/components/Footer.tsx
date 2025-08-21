@@ -1,6 +1,10 @@
-import { Mail, Shield, Info } from 'lucide-react';
+import { Mail, Shield, Info, ExternalLink } from 'lucide-react';
+import { assessments, categories } from '@/data/assessments';
 
 export default function Footer() {
+  const totalAssessments = assessments.length;
+  const totalCategories = Math.max(0, categories.length - 1); // exclude "All"
+  const bodySystems = new Set(assessments.flatMap((a) => a.bodyPart)).size;
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -12,8 +16,9 @@ export default function Footer() {
               <h3 className="text-lg font-semibold text-white">About</h3>
             </div>
             <p className="text-sm leading-relaxed">
-              A centralized platform providing digital access to validated medical assessment tools 
-              used by healthcare professionals for patient evaluation and outcome measurement.
+              This hub provides streamlined access to patient‑reported outcome measures (PROMs)
+              used in the clinical practice of Professor Aaron Buckland. It supports consistent,
+              efficient collection of outcomes to guide patient‑centered spine care.
             </p>
           </div>
 
@@ -25,16 +30,16 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span>Total Assessments:</span>
-                <span className="text-white font-medium">8</span>
+                <span>Total PROMs:</span>
+                <span className="text-white font-medium">{totalAssessments}</span>
               </div>
               <div className="flex justify-between">
                 <span>Categories:</span>
-                <span className="text-white font-medium">7</span>
+                <span className="text-white font-medium">{totalCategories}</span>
               </div>
               <div className="flex justify-between">
                 <span>Body Systems:</span>
-                <span className="text-white font-medium">4</span>
+                <span className="text-white font-medium">{bodySystems}</span>
               </div>
             </div>
           </div>
@@ -46,21 +51,27 @@ export default function Footer() {
               <h3 className="text-lg font-semibold text-white">Information</h3>
             </div>
             <p className="text-sm leading-relaxed mb-3">
-              These assessment tools are designed for use by qualified healthcare professionals. 
-              Please ensure proper training and validation before clinical implementation.
+              These PROMs are intended for use within clinical pathways and research. Ensure
+              appropriate consent and data governance in your setting.
             </p>
+            <a
+              href="https://aaronbuckland.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 text-blue-300 hover:text-blue-200 text-sm"
+            >
+              <span>aaronbuckland.com</span>
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+            </a>
             <div className="text-xs text-gray-400">
-              <p>© 2025 Medical Assessment Hub</p>
-              <p>For educational and clinical use</p>
+              <p>© 2025 Professor Aaron Buckland</p>
+              <p>For clinical and educational use</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-400">
-            Digital assessment tools for modern healthcare • 
-            Built with precision for clinical excellence
-          </p>
+          <p className="text-sm text-gray-400">Patient‑Reported Outcomes • Built for efficient, high‑quality spine care</p>
         </div>
       </div>
     </footer>
