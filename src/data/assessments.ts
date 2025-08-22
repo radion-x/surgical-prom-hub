@@ -7,6 +7,14 @@ export interface Assessment {
   category: string;
   bodyPart: string[];
   purpose: string;
+  // Optional richer metadata for display
+  items?: number; // number of items/questions
+  timeToComplete?: string; // e.g., "3–5 min"
+  scoreRange?: string; // e.g., "0–50 (0–100%)"
+  interpretation?: string; // brief interpretation guidance
+  tags?: string[];
+  author?: string;
+  published?: number;
 }
 
 export const assessments: Assessment[] = [
@@ -19,7 +27,27 @@ export const assessments: Assessment[] = [
     url: "https://odi-ab.aaronbuckland.com/",
     category: "Spine Outcomes",
     bodyPart: ["Spine", "Lower Back"],
-    purpose: "Measures functional disability in patients with low back pain"
+    purpose: "Measures functional disability in patients with low back pain",
+    items: 10,
+    timeToComplete: "3–5 min",
+    scoreRange: "0–50 (0–100%)"
+  },
+  {
+    id: "ndi",
+    name: "Neck Disability Index",
+    abbreviation: "NDI",
+    description:
+      "A 10-item questionnaire assessing neck pain and its impact on daily activities; widely used for cervical spine conditions.",
+    url: "https://ndi.aaronbuckland.com/",
+  category: "Neck Outcomes",
+    bodyPart: ["Spine", "Neck"],
+    purpose: "Measures neck-specific disability in patients with cervical spine disorders",
+    items: 10,
+    timeToComplete: "3–5 min",
+    scoreRange: "0–50 (0–100%)",
+    tags: ["neck", "cervical", "disability", "questionnaire"],
+    author: "Aaron Buckland",
+    published: 2025
   },
   {
     id: "eq-5d-3l",
@@ -81,6 +109,7 @@ export const assessments: Assessment[] = [
 export const categories = [
   "All",
   "Spine Outcomes",
+  "Neck Outcomes",
   "Quality of Life",
   "Pediatric Outcomes"
 ];
@@ -89,6 +118,7 @@ export const bodyParts = [
   "All",
   "Spine",
   "Lower Back",
+  "Neck",
   "General",
   "Pediatric"
 ];

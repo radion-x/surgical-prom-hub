@@ -20,7 +20,8 @@ export default function Home() {
         assessment.name.toLowerCase().includes(q) ||
         assessment.abbreviation.toLowerCase().includes(q) ||
         assessment.description.toLowerCase().includes(q) ||
-        assessment.bodyPart.some(part => part.toLowerCase().includes(q));
+        assessment.bodyPart.some(part => part.toLowerCase().includes(q)) ||
+        (assessment.tags?.some(tag => tag.toLowerCase().includes(q)) ?? false);
       
       return matchesCategory && matchesSearch;
     });

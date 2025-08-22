@@ -1,5 +1,5 @@
 import { Assessment } from '@/data/assessments';
-import { ExternalLink, Activity, Heart, User } from 'lucide-react';
+import { ExternalLink, Activity, Heart, User, Clock, ListOrdered, Ruler } from 'lucide-react';
 
 interface AssessmentCardProps {
   assessment: Assessment;
@@ -10,6 +10,8 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
     switch (category) {
       case 'Spine Outcomes':
         return <Activity className="w-6 h-6 text-blue-600" aria-hidden="true" />;
+      case 'Neck Outcomes':
+        return <Activity className="w-6 h-6 text-emerald-600" aria-hidden="true" />;
       case 'Quality of Life':
         return <Heart className="w-6 h-6 text-rose-600" aria-hidden="true" />;
       case 'Pediatric Outcomes':
@@ -23,6 +25,8 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
     switch (category) {
       case 'Spine Outcomes':
         return 'bg-blue-50 text-blue-700 border border-blue-100';
+      case 'Neck Outcomes':
+        return 'bg-emerald-50 text-emerald-700 border border-emerald-100';
       case 'Quality of Life':
         return 'bg-rose-50 text-rose-700 border border-rose-100';
       case 'Pediatric Outcomes':
@@ -57,6 +61,30 @@ export default function AssessmentCard({ assessment }: AssessmentCardProps) {
         </p>
 
   <div className="mb-4">
+          {/* Optional details row */}
+          {(assessment.items || assessment.timeToComplete || assessment.scoreRange) && (
+            <div className="flex flex-wrap gap-3 mb-3 text-xs text-gray-700">
+              {assessment.items && (
+                <span className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-2 py-1 rounded">
+                  <ListOrdered className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
+                  <span className="font-medium">{assessment.items}</span>
+                  <span className="text-gray-500">items</span>
+                </span>
+              )}
+              {assessment.timeToComplete && (
+                <span className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-2 py-1 rounded">
+                  <Clock className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
+                  <span className="text-gray-600">{assessment.timeToComplete}</span>
+                </span>
+              )}
+              {assessment.scoreRange && (
+                <span className="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-2 py-1 rounded">
+                  <Ruler className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />
+                  <span className="text-gray-600">{assessment.scoreRange}</span>
+                </span>
+              )}
+            </div>
+          )}
           <div className="flex flex-wrap gap-2 mb-2">
             <span className="text-xs font-medium text-gray-500">Body Part:</span>
             {assessment.bodyPart.map((part, index) => (

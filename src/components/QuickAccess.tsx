@@ -7,6 +7,8 @@ function iconFor(category: string) {
   switch (category) {
     case 'Spine Outcomes':
       return <Activity className="w-4 h-4 text-blue-700" aria-hidden="true" />;
+    case 'Neck Outcomes':
+      return <Activity className="w-4 h-4 text-emerald-700" aria-hidden="true" />;
     case 'Quality of Life':
       return <Heart className="w-4 h-4 text-rose-700" aria-hidden="true" />;
     case 'Pediatric Outcomes':
@@ -20,6 +22,8 @@ function chipClass(category: string) {
   switch (category) {
     case 'Spine Outcomes':
       return 'ring-blue-200 hover:ring-blue-300 bg-blue-50';
+    case 'Neck Outcomes':
+      return 'ring-emerald-200 hover:ring-emerald-300 bg-emerald-50';
     case 'Quality of Life':
       return 'ring-rose-200 hover:ring-rose-300 bg-rose-50';
     case 'Pediatric Outcomes':

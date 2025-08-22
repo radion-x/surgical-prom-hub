@@ -19,6 +19,8 @@ export default function FilterBar({
     switch (category) {
       case 'Spine Outcomes':
         return <Activity className="w-4 h-4" aria-hidden="true" />;
+      case 'Neck Outcomes':
+        return <Activity className="w-4 h-4 text-emerald-700" aria-hidden="true" />;
       case 'Quality of Life':
         return <Heart className="w-4 h-4" aria-hidden="true" />;
       case 'Pediatric Outcomes':
@@ -78,7 +80,6 @@ export default function FilterBar({
                     ? 'btn-primary text-white shadow-lg border-transparent hover:brightness-95 transform hover:scale-105'
                     : 'bg-white text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 hover:shadow-md'
                 } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
-                aria-pressed={selectedCategory === category}
                 aria-label={`Filter by category ${category}`}
               >
                 <span className="inline-flex items-center gap-2">
