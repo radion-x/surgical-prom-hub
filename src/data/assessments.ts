@@ -26,11 +26,12 @@ export const assessments: Assessment[] = [
       "A validated questionnaire that quantifies disability for low back pain across daily activities, widely used in spine care.",
     url: "https://odi-ab.aaronbuckland.com/",
     category: "Spine Outcomes",
-    bodyPart: ["Spine", "Lower Back"],
+    bodyPart: ["Spine", "Lower Back", "Thoracic"],
     purpose: "Measures functional disability in patients with low back pain",
     items: 10,
     timeToComplete: "3–5 min",
-    scoreRange: "0–50 (0–100%)"
+    scoreRange: "0–50 (0–100%)",
+    tags: ["adult", "lumbar", "thoracic", "deformity", "kyphosis", "scoliosis"]
   },
   {
     id: "ndi",
@@ -40,12 +41,12 @@ export const assessments: Assessment[] = [
       "A 10-item questionnaire assessing neck pain and its impact on daily activities; widely used for cervical spine conditions.",
     url: "https://ndi.aaronbuckland.com/",
   category: "Neck Outcomes",
-    bodyPart: ["Spine", "Neck"],
+    bodyPart: ["Spine", "Neck", "Cervical"],
     purpose: "Measures neck-specific disability in patients with cervical spine disorders",
     items: 10,
     timeToComplete: "3–5 min",
     scoreRange: "0–50 (0–100%)",
-    tags: ["neck", "cervical", "disability", "questionnaire"],
+    tags: ["neck", "cervical", "disability", "questionnaire", "adult"],
     author: "Aaron Buckland",
     published: 2025
   },
@@ -61,16 +62,23 @@ export const assessments: Assessment[] = [
     purpose: "Assesses overall health-related quality of life (3-level version)"
   },
   {
-    id: "eq-5d-5l",
-    name: "EQ-5D-5L",
-    abbreviation: "EQ-5D-5L",
+    id: "paediatric-odi",
+    name: "Paediatric Oswestry Disability Index",
+    abbreviation: "Paediatric ODI",
     description:
-      "The five-level version of EQ-5D, improving sensitivity and reducing ceiling effects across the same five dimensions plus a VAS.",
-    url: "https://eq-5d-5l.aaronbuckland.com/",
-    category: "Quality of Life",
-    bodyPart: ["General"],
-    purpose: "Assesses overall health-related quality of life (5-level version)"
+      "Paediatric adaptation of the Oswestry Disability Index to measure functional disability in children with low back pain or spine conditions.",
+    url: "https://paediatric-odi.arronbuckland.com/",
+    category: "Pediatric Outcomes",
+    bodyPart: ["Pediatric", "Spine", "Scoliosis"],
+    purpose: "Paediatric adaptation of the Oswestry Disability Index to measure functional disability in children with low back pain or spine conditions",
+    items: 10,
+    timeToComplete: "3–5 min",
+    scoreRange: "0–50 (0–100%)",
+    tags: ["paediatric", "pediatric", "odi", "scoliosis"],
+    author: "Aaron Buckland",
+    published: 2025
   },
+
   {
     id: "cpchild",
     name: "Caregiver Priorities & Child Health Index of Life with Disabilities",
@@ -79,19 +87,21 @@ export const assessments: Assessment[] = [
       "A caregiver-reported outcome measure for children with severe disabilities, covering activities, comfort, communication, health, and quality of life.",
     url: "https://cpchild.aaronbuckland.com/",
     category: "Pediatric Outcomes",
-    bodyPart: ["Pediatric"],
-    purpose: "Evaluates health-related quality of life in children with severe disabilities"
+    bodyPart: ["Pediatric", "Neuromuscular", "Scoliosis"],
+    purpose: "Evaluates health-related quality of life in children with severe disabilities",
+    tags: ["neuromuscular", "scoliosis"]
   },
   {
     id: "vas-ssraa",
-    name: "VAS-SSRAA",
-    abbreviation: "VAS-SSRAA",
+    name: "Spine Pain Assessment",
+    abbreviation: "VAS",
     description:
       "Visual Analog Scale for Spine Surgery Recovery and Activity Assessment: tracks pain, activity tolerance, and recovery trajectory.",
     url: "https://vas-ssraa.aaronbuckland.com/",
     category: "Spine Outcomes",
-    bodyPart: ["Spine"],
-    purpose: "Tracks recovery progress following spine surgery"
+    bodyPart: ["Spine", "Cervical", "Thoracic", "Lower Back", "Pediatric", "Scoliosis", "Kyphosis"],
+    purpose: "Tracks recovery progress following spine surgery",
+    tags: ["adult", "pediatric", "pain", "recovery", "surgery", "scoliosis", "kyphosis", "deformity"]
   },
   {
     id: "srs-22r",
@@ -101,8 +111,9 @@ export const assessments: Assessment[] = [
       "A 22-item questionnaire from the Scoliosis Research Society covering function/activity, pain, self-image, mental health, and satisfaction.",
     url: "https://srs22r.aaronbuckland.com/",
     category: "Spine Outcomes",
-    bodyPart: ["Spine"],
-    purpose: "Assesses outcomes and satisfaction in spinal deformity care"
+    bodyPart: ["Spine", "Pediatric", "Scoliosis", "Kyphosis"],
+    purpose: "Assesses outcomes and satisfaction in spinal deformity care",
+    tags: ["adult", "pediatric", "scoliosis", "kyphosis", "deformity"]
   }
 ];
 
@@ -120,5 +131,10 @@ export const bodyParts = [
   "Lower Back",
   "Neck",
   "General",
-  "Pediatric"
+  "Pediatric",
+  "Thoracic",
+  "Cervical",
+  "Scoliosis",
+  "Kyphosis",
+  "Neuromuscular"
 ];
