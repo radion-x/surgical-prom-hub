@@ -10,7 +10,7 @@ Medical Assessment Hub - A Next.js 15 application showcasing digital medical ass
 ### Core Pattern: Static Data + Client-Side Filtering
 - **Data Source**: `src/data/assessments.ts` contains all assessment metadata as TypeScript interfaces
 - **State Management**: Client-side React state with `useMemo` for performance (see `src/app/page.tsx`)
-- **Component Hierarchy**: Header → FilterBar → AssessmentCard grid → Footer
+- **Component Hierarchy**: Header → QuickAccess → FilterBar → AssessmentCard grid → Footer
 - **External Links**: Assessment cards link to external tools, not internal pages
 
 ### Key Files Structure
@@ -21,6 +21,7 @@ src/
 │   ├── AssessmentCard.tsx    # Individual assessment display
 │   ├── FilterBar.tsx         # Search + category filtering
 │   ├── Header.tsx           # Branding with medical icons
+│   ├── QuickAccess.tsx      # Direct access buttons for popular assessments
 │   └── Footer.tsx           # Statistics & contact info
 └── data/assessments.ts   # Single source of truth for all data
 ```
@@ -35,7 +36,17 @@ Follow the `Assessment` interface in `src/data/assessments.ts`:
 - `url`: External link to actual assessment tool
 
 ### Component Conventions
-- **Icon Mapping**: `AssessmentCard.getIcon()` maps categories to Lucide icons
+- **Icon Mapping**: `AssessmentCard.getIcon()` maps categories to Lucide icons with specific colors:
+  ```tsx
+  case 'Spine Outcomes': return <Activity className="w-6 h-6 text-blue-600" />
+  case 'Neck Outcomes': return <Activity className="w-6 h-6 text-emerald-600" />
+  case 'Quality of Life': return <Heart className="w-6 h-6 text-rose-600" />
+  case 'Pediatric Outcomes': return <User className="w-6 h-6 text-violet-600" />
+  ```
+- **Category Chips**: Color-coded styling pattern in `getCategoryChip()`:
+  ```tsx
+  case 'Spine Outcomes': return 'bg-blue-50 text-blue-700 border border-blue-100'
+  ```
 - **Responsive Design**: All components use Tailwind's `md:` and `lg:` breakpoints
 - **Color Scheme**: Blue primary (`blue-600`), clinical grays, green/red accents for categories
 - **External Links**: Always `target="_blank" rel="noopener noreferrer"`
@@ -46,6 +57,17 @@ Main page uses controlled components pattern:
 const [selectedCategory, setSelectedCategory] = useState('All');
 const [searchTerm, setSearchTerm] = useState('');
 const filteredAssessments = useMemo(() => /* filtering logic */, [selectedCategory, searchTerm]);
+```
+
+### Filtering Logic
+Multi-field search in `src/app/page.tsx`:
+```tsx
+const matchesSearch = q === '' ||
+  assessment.name.toLowerCase().includes(q) ||
+  assessment.abbreviation.toLowerCase().includes(q) ||
+  assessment.description.toLowerCase().includes(q) ||
+  assessment.bodyPart.some(part => part.toLowerCase().includes(q)) ||
+  (assessment.tags?.some(tag => tag.toLowerCase().includes(q)) ?? false);
 ```
 
 ## Deployment & Build Configuration
@@ -89,7 +111,7 @@ PORT=38471 pm2 restart assessment-hub --update-env
 
 ### Content Guidelines
 - Professional, clinical language in all copy
-- Accessibility compliance for healthcare environments  
+- Accessibility compliance for healthcare environments
 - Validate medical terminology with healthcare professionals
 - Ensure assessment descriptions match clinical literature
 

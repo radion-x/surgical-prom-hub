@@ -24,7 +24,7 @@ export const assessments: Assessment[] = [
     abbreviation: "ODI",
     description:
       "A validated questionnaire that quantifies disability for low back pain across daily activities, widely used in spine care.",
-    url: "https://odi-ab.aaronbuckland.com/",
+    url: "https://odi-surg.aaronbuckland.com/",
     category: "Spine Outcomes",
     bodyPart: ["Spine", "Lower Back", "Thoracic"],
     purpose: "Measures functional disability in patients with low back pain",
@@ -39,7 +39,7 @@ export const assessments: Assessment[] = [
     abbreviation: "NDI",
     description:
       "A 10-item questionnaire assessing neck pain and its impact on daily activities; widely used for cervical spine conditions.",
-    url: "https://ndi.aaronbuckland.com/",
+    url: "https://ndi-surg.aaronbuckland.com/",
   category: "Neck Outcomes",
     bodyPart: ["Spine", "Neck", "Cervical"],
     purpose: "Measures neck-specific disability in patients with cervical spine disorders",
@@ -56,7 +56,7 @@ export const assessments: Assessment[] = [
     abbreviation: "EQ-5D-3L",
     description:
       "A standardized, generic health status instrument with three levels across five dimensions plus a VAS for overall health.",
-    url: "https://eq-5d-3l.aaronbuckland.com/",
+    url: "https://eq-5d-3l-surg.aaronbuckland.com/",
     category: "Quality of Life",
     bodyPart: ["General"],
     purpose: "Assesses overall health-related quality of life (3-level version)"
@@ -85,7 +85,7 @@ export const assessments: Assessment[] = [
     abbreviation: "CPCHILD",
     description:
       "A caregiver-reported outcome measure for children with severe disabilities, covering activities, comfort, communication, health, and quality of life.",
-    url: "https://cpchild.aaronbuckland.com/",
+    url: "https://cpchild-surg.aaronbuckland.com/",
     category: "Pediatric Outcomes",
     bodyPart: ["Pediatric", "Neuromuscular", "Scoliosis"],
     purpose: "Evaluates health-related quality of life in children with severe disabilities",
@@ -97,7 +97,7 @@ export const assessments: Assessment[] = [
     abbreviation: "VAS",
     description:
       "Visual Analog Scale for Spine Surgery Recovery and Activity Assessment: tracks pain, activity tolerance, and recovery trajectory.",
-    url: "https://vas-ssraa.aaronbuckland.com/",
+    url: "https://vas-spine.aaronbuckland.com/",
     category: "Spine Outcomes",
     bodyPart: ["Spine", "Cervical", "Thoracic", "Lower Back", "Pediatric", "Scoliosis", "Kyphosis"],
     purpose: "Tracks recovery progress following spine surgery",
@@ -109,7 +109,7 @@ export const assessments: Assessment[] = [
     abbreviation: "SRS-22r",
     description:
       "A 22-item questionnaire from the Scoliosis Research Society covering function/activity, pain, self-image, mental health, and satisfaction.",
-    url: "https://srs22r.aaronbuckland.com/",
+    url: "https://srs22r-surg.aaronbuckland.com/",
     category: "Spine Outcomes",
     bodyPart: ["Spine", "Pediatric", "Scoliosis", "Kyphosis"],
     purpose: "Assesses outcomes and satisfaction in spinal deformity care",
