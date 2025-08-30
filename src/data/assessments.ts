@@ -67,7 +67,7 @@ export const assessments: Assessment[] = [
     abbreviation: "Paediatric ODI",
     description:
       "Paediatric adaptation of the Oswestry Disability Index to measure functional disability in children with low back pain or spine conditions.",
-  url: "https://paediatric-odi.aaronbuckland.com/",
+  url: "https://paediatric-odi-surg.aaronbuckland.com/",
     category: "Pediatric Outcomes",
     bodyPart: ["Pediatric", "Spine", "Scoliosis"],
     purpose: "Paediatric adaptation of the Oswestry Disability Index to measure functional disability in children with low back pain or spine conditions",
