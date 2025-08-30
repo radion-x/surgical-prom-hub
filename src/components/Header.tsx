@@ -1,4 +1,5 @@
 import { Stethoscope, Activity, ExternalLink } from 'lucide-react';
+import ConsentFormsModal from './ConsentFormsModal';
 
 export default function Header() {
   return (
@@ -18,16 +19,20 @@ export default function Header() {
               </p>
             </div>
           </div>
-          <a
-            href="https://aaronbuckland.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center space-x-2 btn-primary text-white text-sm font-medium px-4 py-2 rounded-md shadow-sm transition"
-            aria-label="Visit Professor Aaron Buckland website"
-          >
-            <span>Visit aaronbuckland.com</span>
-            <ExternalLink className="w-4 h-4" aria-hidden="true" />
-          </a>
+          <div className="flex items-center gap-3">
+            <ConsentFormsModal />
+
+            <a
+              href="https://aaronbuckland.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition hidden md:inline-flex"
+              aria-label="Visit Professor Aaron Buckland website"
+            >
+              <span>Visit aaronbuckland.com</span>
+              <ExternalLink className="w-4 h-4" aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
         <div className="bg-white/10 rounded-lg p-4">
