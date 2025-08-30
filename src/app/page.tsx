@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { assessments, categories } from '@/data/assessments';
 import AssessmentCard from '@/components/AssessmentCard';
 import FilterBar from '@/components/FilterBar';
@@ -11,6 +11,22 @@ import QuickAccess from '@/components/QuickAccess';
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+  const [submittedInfo, setSubmittedInfo] = useState<{ id: string; form: string } | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === '1') {
+      const id = params.get('id') || '';
+      const form = params.get('form') || '';
+      setSubmittedInfo({ id, form });
+      // Clean the query after showing the banner once
+      const url = new URL(window.location.href);
+      url.searchParams.delete('submitted');
+      url.searchParams.delete('id');
+      url.searchParams.delete('form');
+      window.history.replaceState(null, '', url.toString());
+    }
+  }, []);
 
   const filteredAssessments = useMemo(() => {
     return assessments.filter((assessment) => {
@@ -30,6 +46,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
+      {submittedInfo && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+          <div className="rounded-md bg-blue-50 border border-blue-200 p-3 text-blue-800 text-sm">
+            Thank you. Your consent form was submitted successfully. Reference ID: <span className="font-mono">{submittedInfo.id}</span>
+          </div>
+        </div>
+      )}
       
   <main id="main" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6 text-gray-700 text-sm">

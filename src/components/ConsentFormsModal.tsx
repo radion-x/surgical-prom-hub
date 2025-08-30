@@ -22,7 +22,7 @@ export default function ConsentFormsModal({ triggerClassName }: Props) {
         onClick={() => setOpen(true)}
         className={
           triggerClassName ??
-          "inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition"
+          "inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition"
         }
         aria-haspopup="dialog"
         aria-expanded={open}
@@ -40,7 +40,7 @@ export default function ConsentFormsModal({ triggerClassName }: Props) {
         >
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
           <div className="relative bg-white rounded-xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden">
-            <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+            <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-blue-600/5 to-blue-600/10">
               <h3 className="text-lg font-semibold text-gray-900">Select a form</h3>
               <button
                 onClick={() => setOpen(false)}
@@ -55,7 +55,7 @@ export default function ConsentFormsModal({ triggerClassName }: Props) {
                 <a
                   key={f.id}
                   href={`/consent/${f.id}`}
-                  className="block rounded-lg border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50 transition p-4"
+                  className="block rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition p-4"
                   onClick={() => setOpen(false)}
                 >
                   <div className="flex items-center justify-between">
@@ -63,7 +63,7 @@ export default function ConsentFormsModal({ triggerClassName }: Props) {
                       <p className="font-medium text-gray-900">{f.title}</p>
                       <p className="text-sm text-gray-500">Fill out online and sign digitally</p>
                     </div>
-                    <span className="text-emerald-600">Start →</span>
+                    <span className="text-blue-700">Start →</span>
                   </div>
                 </a>
               ))}
