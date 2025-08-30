@@ -5,8 +5,9 @@ export default function Header() {
   return (
   <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-4">
+        <div className="mb-4">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex items-center space-x-4">
             <div className="flex items-center gap-3">
               <div className="bg-white/10 p-3 rounded-lg">
                 <Stethoscope className="w-8 h-8" aria-hidden="true" />
@@ -19,19 +20,23 @@ export default function Header() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <ConsentFormsModal />
-
-            <a
-              href="https://aaronbuckland.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition hidden md:inline-flex"
-              aria-label="Visit Professor Aaron Buckland website"
-            >
-              <span>Visit aaronbuckland.com</span>
-              <ExternalLink className="w-4 h-4" aria-hidden="true" />
-            </a>
+          </div>
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-end sm:gap-3">
+            <div className="flex-shrink-0">
+              <ConsentFormsModal triggerClassName="w-full sm:w-auto inline-flex justify-center items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition" />
+            </div>
+            <div className="hidden sm:block">
+              <a
+                href="https://aaronbuckland.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-3 py-2 rounded-md shadow-sm transition"
+                aria-label="Visit Professor Aaron Buckland website"
+              >
+                <span>Visit aaronbuckland.com</span>
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
 
