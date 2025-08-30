@@ -12,7 +12,7 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Professor Aaron Buckland — PROMs Hub</h1>
+              <h1 className="text-3xl font-bold">Professor Aaron Buckland — Surgical PROMs Hub</h1>
               <p className="text-blue-100 text-lg">
                 Patient‑Reported Outcome Measures for spine and musculoskeletal care
               </p>

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import TitleScroller from "../components/TitleScroller";
 
 const geistSans = Inter({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Professor Aaron Buckland | PROMs Hub",
+  title: "Surgical Prom Hub - Prof. Aaron Buckland",
   description:
     "Direct access to PROMs used in Professor Aaron Buckland’s practice: ODI, EQ‑5D‑3L, EQ‑5D‑5L, CPCHILD, VAS‑SSRAA, and SRS‑22r.",
   keywords: [
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Professor Aaron Buckland" }],
   openGraph: {
-    title: "Professor Aaron Buckland — PROMs Hub",
+  title: "Surgical Prom Hub - Prof. Aaron Buckland",
     description: "Patient‑Reported Outcome Measures for spine and musculoskeletal care",
     type: "website",
   },
@@ -52,6 +53,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <a href="#main" className="skip-link">Skip to content</a>
+        <TitleScroller />
         {children}
       </body>
     </html>
