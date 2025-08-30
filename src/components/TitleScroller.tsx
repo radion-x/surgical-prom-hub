@@ -4,18 +4,21 @@ import { useEffect, useRef } from "react";
 
 export default function TitleScroller() {
   const baseTitle = "Surgical Prom Hub - Prof. Aaron Buckland";
-  const delay = 200; // ms per frame
+  // add a small separator so end and start don't meld together
+  const separator = "   ";
+  const scrollString = baseTitle + separator;
+  const delay = 180; // ms per frame (tuned for smoothness)
   const intervalRef = useRef<number | null>(null);
-  const titleRef = useRef(baseTitle);
+  const titleRef = useRef(scrollString);
 
   useEffect(() => {
     // initialize
     document.title = baseTitle;
 
     function step() {
-      // move last char to front for a left-to-right marquee effect
+      // move first char to the end for the opposite (left-to-right) direction
       const cur = titleRef.current;
-      const next = cur.slice(-1) + cur.slice(0, -1);
+      const next = cur.slice(1) + cur.charAt(0);
       titleRef.current = next;
       document.title = next;
     }
